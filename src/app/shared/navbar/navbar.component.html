@@ -1,0 +1,103 @@
+<nav id="navbar-main"
+  class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <img src="./assets/img/brand/Agency.png">
+    </a>
+    <!-- <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <li class="nav-item dropdown"><a [routerLink]="['/home']" [routerLinkActive]="['is-active']"
+            style="color:white">accueil</a></li>
+        <li class="nav-item dropdown"><a [routerLink]="['/acheter']" style="color:white"
+            [routerLinkActive]="['is-active']">Acheter</a></li>
+        <li class="nav-item dropdown"><a [routerLink]="['/louer']" style="color:white"
+            [routerLinkActive]="['is-active']">Louer</a></li>
+        <li *ngIf="roles[0]=='ROLE_ADMIN'" class="nav-item dropdown"><a [routerLink]="['/backOffice/users']"
+            style="color:white" [routerLinkActive]="['is-active']">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank"
+            data-toggle="tooltip" title="Like us on Facebook">
+            <i class="fa fa-facebook-square"></i>
+            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank"
+            data-toggle="tooltip" title="Follow us on Instagram">
+            <i class="fa fa-instagram"></i>
+            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item" *ngIf="!LoggedIn">
+          <a class="nav-link nav-link-icon" [routerLink]="['/login']">
+            <i></i>
+            <span>Login</span>
+          </a>
+        </li>
+        <li *ngIf="!LoggedIn">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1"
+                style="background-color: white;color:#5e72e4;border-radius: 20px;"
+                [routerLink]="['/formE']">SignUp</button>
+
+            </div>
+          </div>
+        </li>
+
+        <li *ngIf="roles[0]=='ROLE_CLIENT'">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1"
+                style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle><img
+                  style="width: 30px; border-radius: 50px;" src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                  alt="avatar"><span style="margin: 0 0 0 10px;">{{username}}</span></button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
+                  <div style="margin-top: 8px;"><i class="fa fa-user" aria-hidden="true"></i></div>
+                  <div> <button ngbDropdownItem [routerLink]="['/candidat/compte']">Mon compte</button></div>
+                </div>
+                <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
+                  <div style="margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                  <div> <button ngbDropdownItem (click)="logout()">Déconnexion</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li *ngIf="roles[0]=='ROLE_ADMIN'">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1"
+                style="background-color: white;color:#5e72e4;border-radius: 20px;" ngbDropdownToggle><img
+                  style="width: 30px; border-radius: 50px;" src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                  alt="avatar"><span style="margin: 0 0 0 10px;">{{username}}</span></button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+                <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
+                  <div style="margin-top: 8px;"><i class="fa fa-user" aria-hidden="true"></i></div>
+                  <div> <button ngbDropdownItem [routerLink]="['/entrepreneur/comptee']">Mon compte</button></div>
+                </div>
+                <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
+                  <div style="margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                  <div> <button ngbDropdownItem (click)="logout()">Déconnexion</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nav>

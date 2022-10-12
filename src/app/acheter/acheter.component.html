@@ -1,0 +1,140 @@
+<main>
+  <div class="position-relative">
+    <!-- Hero for FREE version -->
+    <section class="section  section-hero section-shaped">
+      <!-- Background circles -->
+      <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+      <div class="">
+        <div class="col px-0">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+
+              <div class="">
+                <div class="main-banner__wrapper">
+                  <div class="container text-center">
+                    <div class="main-banner__head">
+                      <h3><strong>Acheter</strong></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrapper mt-5">
+                <div class="container container-fluid quick-search">
+                  <div class="quick-search__wrapper">
+                    <form action="https://www.stage.fr/jobs/" class="form-inline row" target="_top">
+                      <div class="form-group form-group__input ">
+                        <label for="keywords" class="form-label sr-only">Mots clefs</label>
+                        <input type="text" value="" class="form-control form-control__centered" name="q" id="keywords"
+                          placeholder="Mots clefs" />
+                      </div>
+                      <div class="form-group form-group__input">
+                        <label for="GooglePlace" class="form-label sr-only">Lieu</label>
+                        <input type="text" name="l" id="GooglePlace" class="form-control form-control__google-location"
+                          value="" placeholder="Lieu" />
+                        <input type="hidden" name="r" disabled />
+                      </div>
+                      <div class="form-group form-group__btn">
+                        <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-index-header"
+                          class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                          <span class="btn-inner--icon">
+                            <svg style="height: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                              <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                              <path
+                                d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                            </svg></span>
+                          <span class="btn-inner--text">Rechercher</span>
+                        </a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5">
+                <small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
+                <img src="./assets/img/brand/Agency.png" style="height: 40px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="display: grid;">
+      <section class="main-sections listing__featured">
+        <div class="container container-fluid listing">
+          <div class="listing-item__list with-banner">
+            <article *ngFor="let Patrimoine of Patrimoines" class="media well listing-item listing-item__jobs listing-item__featured">
+              <div class="media-left listing-item__logo">
+                <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
+                  tabindex="-1">
+                  <img class="media-object profile__img-company"
+                    src="http://localhost:8080/api/patrimoines/image/{{Patrimoine.id}}" alt="FLATEO">
+                </a>
+              </div>
+              <div class="media-body">
+                <div class="media-right text-right">
+                  <a class="save-job" data-toggle="modal" data-target="#apply-modal" data-id="744367"
+                    title="Sauvegarder" data-href="/saved-jobs/?id=744367&action=save&reload=✓" rel="nofollow"
+                    href="#"></a>
+                  <div class="listing-item__date">
+                    {{Patrimoine.date}}
+                  </div>
+                </div>
+                <div class="media-heading listing-item__title">
+                  <a href="https://www.stage.fr/job/744367/stage-operations-manager-guest-hotel-quality-manager/"
+                    class="link">{{Patrimoine.titre}}</a>
+                </div>
+
+                <div class="listing-item__info listing-item__info--item-salary-range clearfix">
+
+                </div>
+                <div class="listing-item__info clearfix">
+                  
+                  <span class="listing-item__info--item listing-item__info--item-location">
+                    Type : {{Patrimoine.type}}
+                  </span>
+                </div>
+                <div class="listing-item__desc">
+                  {{Patrimoine.description}}
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="banner banner--right">
+            <!-- START DATA DRIVEN TAG -->
+            <script title='DataDriven' crossorigin='anonymous' async> document.ddSiteCltId = '';
+
+              document.ddSiteAnnId = ''; document.ddAnnRef = ''; document.ddSiteUsrId = '';
+
+              document.ddSiteEmId = ''; document.ddSitePhone = ''; document.ddSiteOrgn = '';
+
+              document.ddSiteCkie = '';
+              var ddeId = 0, ddscmdId = 128, ddsiteutil = window.location.hostname, dadriRef =
+
+                document.referrer, ddr_tracking = null;
+              ddr_tracking = document.createElement('script');
+              ddr_tracking.type = 'text/javascript';
+              ddr_tracking.src = 'https://tags.data-driven.fr/tags?cch=' + Date.now() + '&h=' +
+
+                ddsiteutil + '&v=1.03';
+              ddr_tracking.setAttribute('title', 'DDAppendScript');
+              document.body.appendChild(ddr_tracking);
+            </script>
+            <!-- END DATA DRIVEN TAG -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>

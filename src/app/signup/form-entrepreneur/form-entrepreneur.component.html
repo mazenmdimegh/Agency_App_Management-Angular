@@ -1,0 +1,192 @@
+<main class="formulairecandidat-page">
+  <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+      <div class="card card-4">
+        <div class="card-body">
+          <h2 class="title">Créer un profil Employeur / Recruteur</h2>
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+            <div class="form-group">
+              <label for="inputEmail4">Nom d'utilisateur</label>
+              <input type="email" class="form-control" type="text" class="form-control" name="username"
+                [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" id="inputNom4"
+                placeholder="Nom">
+            </div>
+            <div class="alert-danger" *ngIf="username.errors && f.submitted">
+              <div *ngIf="username.errors.required">Username is required</div>
+              <div *ngIf="username.errors.minlength">
+                Username must be at least 3 characters
+              </div>
+              <div *ngIf="username.errors.maxlength">
+                Username must be at most 20 characters
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">N°CIN *</label>
+                <input type="number" class="form-control" name="ncin" [(ngModel)]="form.ncin" required #ncin="ngModel"
+                  id="inputncin4" placeholder="N°Cin">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">N°Telephone *</label>
+                <input type="number" class="form-control" name="tel" [(ngModel)]="form.tel" required #tel="ngModel"
+                  id="inputtel4" placeholder="N°Telephone">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="alert-danger" *ngIf="ncin.errors && f.submitted">
+                <div *ngIf="ncin.errors.required">ncin is required</div>
+                <div *ngIf="ncin.errors.maxlength">
+                  ncin must be at 8 digits
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="tel.errors && f.submitted">
+                <div *ngIf="tel.errors.required">telephone is required</div>
+                <div *ngIf="tel.errors.min">
+                  tel must be at 8 digits
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Birth of Date *</label>
+                <div class="input-group">
+
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+                  <!-- [(ngModel)]="model" -->
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"
+                    style="padding: 0 4px 0 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg
+                     " viewBox="0 0 448 512" style="width: 20px;">
+                      <path
+                        d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z" />
+                    </svg></button>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">Gouvernorat *</label>
+                <select id="inputState" required name="gouvernorat" [(ngModel)]="form.gouvernorat" required
+                  #gouvernorat="ngModel" class="form-control">
+                  <option value="d">Sélectionnez Gouvernorat</option>
+                  <option value="Ariana">Ariana</option>
+                  <option value="711">Béja</option>
+                  <option value="712">Ben Arous</option>
+                  <option value="713">Bizerte</option>
+                  <option value="714">Gabès</option>
+                  <option value="715">Gafsa</option>
+                  <option value="Jendouba">Jendouba</option>
+                  <option value="Kairouan">Kairouan</option>
+                  <option value="718">Kasserine</option>
+                  <option value="719">Kébili</option>
+                  <option value="720">Le Kef</option>
+                  <option value="721">Mahdia</option>
+                  <option value="722">La Manouba</option>
+                  <option value="723">Médenine</option>
+                  <option value="724">Monastir</option>
+                  <option value="725">Nabeul</option>
+                  <option value="726">Sfax</option>
+                  <option value="727">Sidi Bouzid</option>
+                  <option value="728">Siliana</option>
+                  <option value="729">Sousse</option>
+                  <option value="730">Tataouine</option>
+                  <option value="731">Tozeur</option>
+                  <option value="732">Tunis</option>
+                  <option value="733">Zaghouan</option>
+                </select>
+              </div>
+            </div>
+            <div class="alert-danger" *ngIf="gouvernorat.errors && f.submitted">
+              <div *ngIf="gouvernorat.errors.required">Gouvernorat is required</div>
+
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email *</label>
+                <input type="text" class="form-control" type="email" class="form-control" name="email"
+                  [(ngModel)]="form.email" required email #email="ngModel" id="inputEmail4" placeholder="Email">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password *</label>
+                <input type="password" class="form-control" type="password" class="form-control" name="password"
+                  [(ngModel)]="form.password" required minlength="6" #password="ngModel" id="inputPassword4"
+                  placeholder="Password">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">
+                  Email must be a valid email address
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  J'accepte les conditions d'utilisation *
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="sub()">Sign in</button>
+            <div class="alert alert-success" *ngIf="isSuccessful">
+              Your registration is successful!
+            </div>
+            <div *ngIf="submitted && !isSignUpFailed" style="margin-left: 125px;" class="lds-dual-ring"></div>
+          </form>
+          <!-- <div class="row row-space">
+                          <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">first name</label>
+                                  <input class="input--style-4"  formControlName="prenom" type="text" name="first_name">
+                              </div>
+                          </div>
+                          <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">last name</label>
+                                  <input class="input--style-4"  formControlName="nom" type="text" name="last_name">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row row-space">
+                          <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">Birthday</label>
+                                  <div class="input-group-icon">
+                                      <input class="input--style-4 js-datepicker"  formControlName="birthday"type="text" name="birthday">
+                                      <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row row-space">
+                          <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">Email</label>
+                                  <input class="input--style-4" type="email"  formControlName="email" name="email">
+                              </div>
+                          </div>
+                          <div class="col-2">
+                              <div class="input-group">
+                                  <label class="label">Phone Number</label>
+                                  <input class="input--style-4" type="text"  formControlName="tel" name="phone">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="p-t-15">
+                          <button class="btn btn--radius-2 btn--blue" (click)="sub()">Submit</button>
+                      </div>
+                  </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
