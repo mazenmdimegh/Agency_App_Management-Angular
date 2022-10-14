@@ -14,6 +14,8 @@ import { BackOfficeComponent } from './back-office/back-office.component';
 import { OffreManagerComponent } from './back-office/offre-manager/offre-manager.component';
 import { UserManagerComponent } from './back-office/user-manager/user-manager.component';
 import { AcheterComponent } from './acheter/acheter.component';
+import { historyComponent } from './back-office/history/history.component';
+import { historiqueComponent } from './history/historique.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -27,10 +29,12 @@ const routes: Routes = [
         path: 'backOffice', component: BackOfficeComponent,
         children: [
             { path: 'Offres', component: OffreManagerComponent, },
-            { path: 'users', component: UserManagerComponent, }
+            { path: 'users', component: UserManagerComponent, },
+            { path: 'demandes', component: historyComponent, }
         ]
     },
 
+    { path: 'history', component: historiqueComponent },
     { path: 'login', component: LoginComponent },
     { path: 'louer', component: LouerComponent },
     { path: 'acheter', component: AcheterComponent },

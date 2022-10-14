@@ -65,7 +65,7 @@
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
                   <div style="margin-top: 8px;"><i class="fa fa-user" aria-hidden="true"></i></div>
-                  <div> <button ngbDropdownItem [routerLink]="['/candidat/compte']">Mon compte</button></div>
+                  <div> <button ngbDropdownItem [routerLink]="['/history']">Historique</button></div>
                 </div>
                 <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
                   <div style="margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
@@ -84,10 +84,10 @@
                   alt="avatar"><span style="margin: 0 0 0 10px;">{{username}}</span></button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
 
-                <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
+                <!-- <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
                   <div style="margin-top: 8px;"><i class="fa fa-user" aria-hidden="true"></i></div>
                   <div> <button ngbDropdownItem [routerLink]="['/entrepreneur/comptee']">Mon compte</button></div>
-                </div>
+                </div> -->
                 <div class="btn" style="display: flex;padding: 0 10px;margin: 0;">
                   <div style="margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
                   <div> <button ngbDropdownItem (click)="logout()">Déconnexion</button></div>

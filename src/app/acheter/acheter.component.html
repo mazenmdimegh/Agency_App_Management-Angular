@@ -83,9 +83,9 @@
               </div>
               <div class="media-body">
                 <div class="media-right text-right">
-                  <a class="save-job" data-toggle="modal" data-target="#apply-modal" data-id="744367"
+                  <!-- <a class="save-job" data-toggle="modal" data-target="#apply-modal" data-id="744367"
                     title="Sauvegarder" data-href="/saved-jobs/?id=744367&action=save&reload=✓" rel="nofollow"
-                    href="#"></a>
+                    href="#"></a> -->
                   <div class="listing-item__date">
                     {{Patrimoine.date}}
                   </div>
@@ -106,6 +106,18 @@
                 </div>
                 <div class="listing-item__desc">
                   {{Patrimoine.description}}
+                </div>
+                <div *ngIf="Patrimoine.status=='Accepted'" class="listing-item__btn">
+                  <button (click)="De()">Accepted</button>
+                </div>
+                <div *ngIf="Patrimoine.status=='none'" class="listing-item__btn">
+                  <button (click)="Demande(Patrimoine.titre)">Demande +</button>
+                </div>
+                <div *ngIf="Patrimoine.status=='waiting'" class="listing-item__btn ">
+                  <button class="waiting" (click)="De()">waiting</button>
+                </div>
+                <div *ngIf="Patrimoine.status=='Refused'" class="listing-item__btn ">
+                  <button class="Rejected" (click)="De()">Refused</button>
                 </div>
               </div>
             </article>

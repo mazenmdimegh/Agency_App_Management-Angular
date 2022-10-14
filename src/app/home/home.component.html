@@ -109,6 +109,18 @@
                 <div class="listing-item__desc">
                   {{Patrimoine.description}}
                 </div>
+                <div *ngIf="Patrimoine.status=='none'" class="listing-item__btn">
+                  <button (click)="Demande(Patrimoine.titre)">Demande +</button>
+                </div>
+                <div *ngIf="Patrimoine.status=='Accepted'" class="listing-item__btn">
+                  <button (click)="De()">Accepted</button>
+                </div>
+                <div *ngIf="Patrimoine.status=='waiting'" class="listing-item__btn ">
+                  <button class="waiting" (click)="De()">waiting</button>
+                </div>
+                <div *ngIf="Patrimoine.status=='Refused'" class="listing-item__btn ">
+                  <button class="Rejected" (click)="De()">Refused</button>
+                </div>
               </div>
             </article>
           </div>

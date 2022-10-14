@@ -1,0 +1,110 @@
+<main>
+  <div class="position-relative">
+    <!-- Hero for FREE version -->
+    <section class="section  section-her section-shaped">
+      <!-- Background circles -->
+      <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+      <div class="">
+        <div class="col px-0">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+
+              <div class="">
+                <div class="main-banner__wrapper">
+                  <div class="container text-center">
+                    <div class="main-banner__head">
+                      <h1><strong>L'historique</strong></h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="display: grid;">
+      
+    </div>
+    <div *ngIf="Alldemandes.length!=0" class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <!-- <div class="card-header border-0 flex">
+              <h3 class="mb-0">Les Demandes</h3> -->
+              <!-- <h3 class="mb-0 green" (click)="Add()">Ajouter +
+                <span></span>
+              </h3> 
+            </div> -->
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">username</th>
+                    <th scope="col">date</th>
+                    <th scope="col" id="ED1">status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Alldemandes" class="tab">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <!-- <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                            <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
+                          </a> -->
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-warning"></i> {{user.id}}
+                        </span>
+                      </div>
+                    </th>
+                    <td>
+                      <strong>{{user.titre}}</strong>
+                    </td>
+                    <td>
+    
+                      {{user.username}}
+    
+                    </td>
+                    
+                    <td>
+                      {{user.date}}
+                    </td>
+                    <td class="text-right" id="ED">
+                      {{user.status}}
+                    </td>
+                  </tr>
+    
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg *ngIf="spinner" class="spinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z" />
+      </svg>
+      
+      
+    </div>
+    <div class="nodemands" *ngIf="Alldemandes.length==0" >
+      <h1>No History Found</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 208.1L256 65.9 448 208.1v47.4L289.5 373c-9.7 7.2-21.4 11-33.5 11s-23.8-3.9-33.5-11L64 255.5V208.1zM256 0c-12.1 0-23.8 3.9-33.5 11L25.9 156.7C9.6 168.8 0 187.8 0 208.1V448c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V208.1c0-20.3-9.6-39.4-25.9-51.4L289.5 11C279.8 3.9 268.1 0 256 0z"/></svg>
+    </div>
+  </div>
+</main>

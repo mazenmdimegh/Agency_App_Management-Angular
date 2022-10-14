@@ -20,6 +20,9 @@ export class UserService {
   getPatrimoines(): Observable<any> {
     return this.httpClient.get(Patri_API + "/all");
   }
+  getAlldemandes(): Observable<any> {
+    return this.httpClient.get(Patri_API + "/alldemandes");
+  }
   DeletePatrimoine(id: any) {
     return this.httpClient.delete(Patri_API + `/deleteById/${id}`);
   }
@@ -80,8 +83,22 @@ export class UserService {
       description
     }, httpOptions);
   }
-
-
+  AddDemande(titre: any, username: string): Observable<any> {
+    return this.httpClient.post(Patri_API + '/demande', {
+      username,
+      titre
+    }, httpOptions);
+  }
+  RefuseDemande(id: any): Observable<any> {
+    return this.httpClient.put(Patri_API + '/demande/' + id, {
+      "status": "Refused"
+    }, httpOptions);
+  }
+  AcceptDemande(id: any): Observable<any> {
+    return this.httpClient.put(Patri_API + '/demande/' + id, {
+      "status": "Accepted"
+    }, httpOptions);
+  }
 
 
 

@@ -24,6 +24,8 @@ import { OffreManagerComponent } from './back-office/offre-manager/offre-manager
 import { UserManagerComponent } from './back-office/user-manager/user-manager.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { AcheterComponent } from './acheter/acheter.component';
+import { historyComponent } from './back-office/history/history.component';
+import { historiqueComponent } from './history/historique.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { AcheterComponent } from './acheter/acheter.component';
     FormEntrepreneurComponent,
     BackOfficeComponent,
     OffreManagerComponent,
-    UserManagerComponent
+    UserManagerComponent,
+    historyComponent,
+    historiqueComponent,
   ],
   imports: [
     BrowserModule,
